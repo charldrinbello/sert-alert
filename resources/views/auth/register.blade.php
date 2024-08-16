@@ -21,26 +21,36 @@
             <x-input-error :messages="$errors->get('email')" class="invalid-feedback" />
         </div>
 
+        <!-- Position -->
+        <div class="col-12">
+            <x-input-label for="position" :value="__('Position')" class="form-label" />
+            <x-text-input id="position" class="form-control" type="text" name="position" :value="old('position')" required autocomplete="username" />
+            <x-input-error :messages="$errors->get('position')" class="invalid-feedback" />
+        </div>
+
+        <!-- Course-Section -->
+        <div class="col-12">
+            <x-input-label for="course_section" :value="__('Course & Section')" class="form-label" />
+            <x-text-input id="course_section" class="form-control" type="text" name="course_section" :value="old('course_section')" required autocomplete="username" />
+            <x-input-error :messages="$errors->get('course_section')" class="invalid-feedback" />
+        </div>
+
         <!-- Password -->
         <div class="col-12">
             <x-input-label for="password" :value="__('Password')" class="form-label" />
-
             <x-text-input id="password" class="form-control"
                             type="password"
                             name="password"
                             required autocomplete="new-password" />
-
             <x-input-error :messages="$errors->get('password')" class="invalid-feedback" />
         </div>
 
         <!-- Confirm Password -->
         <div class="col-12">
             <x-input-label for="password_confirmation" :value="__('Confirm Password')" class="form-label" />
-
             <x-text-input id="password_confirmation" class="form-control"
                             type="password"
                             name="password_confirmation" required autocomplete="new-password" />
-
             <x-input-error :messages="$errors->get('password_confirmation')" class="invalid-feedback" />
         </div>
 
