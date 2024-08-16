@@ -1,8 +1,10 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ReportHistoryController; // Ensure you import the correct controllers
+use App\Http\Controllers\SERTManagementController;
+use App\Http\Controllers\AdminManagementController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,17 +17,31 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth/login');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::middleware('auth', 'verified')->group(function () {
 
-Route::middleware('auth')->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+
+
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    Route::get('/report-history', [ReportHistoryController::class, 'index'])->name('report-history.index');
+    Route::get('/sert-management', [SERTManagementController::class, 'index'])->name('sert-management.index');
+    Route::get('/admin-management', [AdminManagementController::class, 'index'])->name('admin-management.index');
+
+    Route::get('/register', function () {
+        return view('admin-management.register');
+    })->name('register');    
+
+
 });
+
+require __DIR__.'/auth.php';
 
 require __DIR__.'/auth.php';
