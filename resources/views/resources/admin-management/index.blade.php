@@ -28,6 +28,7 @@
                                     <th>Name</th>
                                     <th>Email</th>
                                     <th>Position</th>
+                                    <th>Section</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
@@ -37,30 +38,13 @@
                                     <td>{{ $admin->name }}</td>
                                     <td>{{ $admin->email }}</td>
                                     <td>{{ $admin->position }}</td>
+                                    <td>{{ $admin->course_section }}</td>
                                     <td>
-                                        <a href="" class="btn btn-dark m-1"><i class="bi bi-folder-symlink"></i></a>
-                                        <a href="" class="btn btn-success m-1"><i class="bi bi-pencil-square"></i></a>
+
+                                        <a href="{{ route('profile.edit') }}" class="btn btn-success m-1"><i class="bi bi-pencil-square"></i></a>
 
                                         <button type="button" class="btn btn-danger m-1" data-bs-toggle="modal" data-bs-target="#deleteModal{{ $admin->id }}"><i class="bi bi-trash"></i></button>
 
-                                        <div class="modal fade" id="deleteModal{{ $admin->id }}" tabindex="-1">
-                                            <div class="modal-dialog modal-dialog-centered">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title">Delete Account</h5>
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                    </div>
-                                                    <div class="modal-body">Are you sure you want to delete this account? This action cannot be undone</div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">No</button>
-                                                        <form action="" method="post">
-                                                            @csrf @method('DELETE')
-                                                            <button type="submit" class="btn btn-danger">Delete</button>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </td>
                                 </tr>
                                 @endforeach

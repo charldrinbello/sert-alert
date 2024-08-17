@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('position'); 
-            $table->string('course_section'); 
+            $table->string('course_year'); 
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
@@ -30,5 +30,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('users');
+        $table->dropColumn('position');
+        $table->dropColumn('course_year');
     }
 };

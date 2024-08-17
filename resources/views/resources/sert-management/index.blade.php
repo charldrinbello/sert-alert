@@ -16,14 +16,13 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-body">
-                        <h6 class="card-title">SERT Management 
-                            <a href="{{ route('register') }}" type="button" class="btn btn-primary float-end">
-                            Add SERT Member
-                            </a>
+                        <h6 class="card-title">
+                            SERT Management
+                            <a href="{{ route('register') }}" type="button" class="btn btn-primary float-end"> Add SERT Member </a>
                         </h6>
-                        
-                        <hr>
-</hr>
+
+                        <hr />
+
                         <table class="table datatable">
                             <thead>
                                 <tr>
@@ -67,7 +66,6 @@
                                         </div>
                                     </td>
                                 </tr>
-                                
                             </tbody>
                         </table>
                     </div>

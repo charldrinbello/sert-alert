@@ -33,8 +33,7 @@ Route::middleware('auth', 'verified')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     Route::get('/admin-management', [AdminManagementController::class, 'index'])->name('admin-management.index');
-
-
+    Route::get('/sert-management', [SERTManagementController::class, 'index'])->name('sert-management.index');
 
 });
 
