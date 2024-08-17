@@ -5,6 +5,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReportHistoryController; // Ensure you import the correct controllers
 use App\Http\Controllers\SERTManagementController;
 use App\Http\Controllers\AdminManagementController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,13 +32,8 @@ Route::middleware('auth', 'verified')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    Route::get('/report-history', [ReportHistoryController::class, 'index'])->name('report-history.index');
-    Route::get('/sert-management', [SERTManagementController::class, 'index'])->name('sert-management.index');
     Route::get('/admin-management', [AdminManagementController::class, 'index'])->name('admin-management.index');
 
-    Route::get('/register', function () {
-        return view('admin-management.register');
-    })->name('register');    
 
 
 });

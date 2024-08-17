@@ -17,9 +17,10 @@
 
         <div class="content d-flex justify-content-center align-items-center flex-grow-1">
             <div class="center-buttons">
-                <a href="{{ route('report-history.index') }}" class="btn btn-custom btn-lg">Report History</a>
-                <a href="{{ route('sert-management.index') }}" class="btn btn-custom btn-lg">SERT Management</a>
+                <a href="" class="btn btn-custom btn-lg">Report History</a>
+                <a href="" class="btn btn-custom btn-lg">SERT Management</a>
                 <a href="{{ route('admin-management.index') }}" class="btn btn-custom btn-lg">Admin Account</a>
+
             </div>
         </div>
     </div>
